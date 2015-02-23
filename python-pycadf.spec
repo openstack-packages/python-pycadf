@@ -36,7 +36,7 @@ DMTF Cloud Audit (CADF) data model
 
 
 %prep
-%setup -q -n %{pypi_name}-%{version}
+%setup -q -n %{pypi_name}-%{upstream_version}
 # Remove bundled egg-info
 rm -rf %{pypi_name}.egg-info
 
@@ -57,7 +57,7 @@ rm -rf %{buildroot}/%{python_sitelib}/%{pypi_name}/tests
 %dir %{_sysconfdir}/%{pypi_name}
 %config(noreplace) %{_sysconfdir}/%{pypi_name}/*.conf
 %{python2_sitelib}/%{pypi_name}
-%{python2_sitelib}/%{pypi_name}-%{version}-py?.?.egg-info
+%{python2_sitelib}/%{pypi_name}-%{upstream_version}-py?.?.egg-info
 
 
 %changelog
