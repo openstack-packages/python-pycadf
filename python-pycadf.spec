@@ -8,8 +8,10 @@
 %{!?python2_sitearch: %global python2_sitearch %(%{__python2} -c "from distutils.sysconfig import get_python_lib; print(get_python_lib(1))")}
 %endif
 
+%{!?upstream_version: %global upstream_version %{version}%{?milestone}}
+
 Name:           python-%{pypi_name}
-Version:        0.5.1
+Version:        2.1.0
 Release:        1%{?dist}
 Summary:        DMTF Cloud Audit (CADF) data model
 
@@ -61,6 +63,9 @@ rm -rf %{buildroot}/%{python_sitelib}/%{pypi_name}/tests
 
 
 %changelog
+* Wed Mar 23 2016 Haikel Guemar <hguemar@fedoraproject.org> 2.1.0-1
+- Update to 2.1.0
+
 * Fri Jun 13 2014 Pádraig Brady <pbrady@redhat.com> - 0.5.1-1
 - Latest upstream
 
